@@ -8,10 +8,10 @@ import java.util.Map;
 import java.util.List;
 
 @RestController
-@RequestMapping("/journal")
+//@RequestMapping("/journal")
 public class JournalEntryController {
 
-    private Map<Long, JournalEntry> journalEntries = new HashMap<>();
+    private Map<String, JournalEntry> journalEntries = new HashMap<>();
 
     @GetMapping//("/abc")
     public List<JournalEntry> getAll()
@@ -27,19 +27,19 @@ public class JournalEntryController {
     }
 
     @GetMapping("id/{myID}")
-    public JournalEntry getJournalEntryByID(@PathVariable Long myID)
+    public JournalEntry getJournalEntryByID(@PathVariable String myID)
     {
         return journalEntries.get(myID);
     }
 
     @DeleteMapping("id/{myID}")
-    public JournalEntry deleteJournalEntryByID(@PathVariable Long myID)
+    public JournalEntry deleteJournalEntryByID(@PathVariable String myID)
     {
         return journalEntries.remove(myID);
     }
 
     @PutMapping("id/{myID}")
-    public JournalEntry updateJournalEntryByID(@PathVariable Long myID , @RequestBody JournalEntry myEntry)
+    public JournalEntry updateJournalEntryByID(@PathVariable String myID , @RequestBody JournalEntry myEntry)
     {
         myEntry.setId(myID);
         return journalEntries.put(myID, myEntry);
