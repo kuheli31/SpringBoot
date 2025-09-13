@@ -1,4 +1,4 @@
-package com.kuheli.Journal.App.controller;
+package com.kuheli.MindJournal.App.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
