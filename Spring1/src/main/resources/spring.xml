@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="alien1" class="org.kuheli.Alien" scope="singleton" autowire="byType">
+        <property name="age" value="21"/>
+         <property name="com" ref="com2"/>
+        <!-- <constructor-arg type="int" value="52"/>
+        <constructor-arg type="org.kuheli.Laptop" ref="lap1"/> -->
+    </bean>
+    <bean id="com1" class="org.kuheli.Laptop" primary="true">
+    </bean>
+    <bean id="com2" class="org.kuheli.Desktop">
+    </bean>
+</beans>
